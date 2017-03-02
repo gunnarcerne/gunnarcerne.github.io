@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Namnlöst dokument</title>
+</head>
+
+<body>
+	<p id="p1">
+    </p>
+	<script>
+		var bool = false;
+		var inPut = prompt("skriv ett tal");
+		do
+		{
+			
+			var n = 1;
+			var decimal = 0;
+			while(inPut=="")
+		 	{
+			 	inPut = prompt("du skrev inte in något, skriv in ett tal");
+		 	}
+			for(var i = 0; i < inPut.length; i++)
+			{	
+		 		if(inPut.charCodeAt(0) == 45 && inPut.length > n && i == 0)
+		 		{
+		 			i++;
+		 			n++;
+		 		}
+		 		var tal=inPut.charCodeAt(i);
+		 		if(!(tal >= 48 && tal <= 57 || tal == 44 || tal == 46))
+		 		{
+			 		inPut = prompt("du skrev inte in ett tal, skriv in ett tal");
+			 		bool = false;
+			 		break; 			 
+		 		}
+		 		else if((tal == 44 || tal == 46) && i == inPut.length-1 && decimal < 1)
+		 		{
+		 			if(inPut.length > n)
+					{
+						bool = true;
+					}
+					else
+					{
+						inPut = prompt("du skrev inte in ett tal, skriv in ett tal");
+						break;
+					}
+		 		}
+		 		else if(tal == 44 || tal == 46)
+		 		{
+		 			decimal++;
+		 			if(decimal > 1)
+		 			{
+		 				inPut = prompt("du skrev in för många decimal tecken, skriv in ett tal")
+		 				break;
+		 			}
+		 		}
+		 		else
+		 		{
+		 			bool = true;
+		 		}
+			}		
+		}
+		while(bool == false);
+		document.getElementById("p1").innerHTML = inPut;
+	</script>
+	
+</body>
+</html>
