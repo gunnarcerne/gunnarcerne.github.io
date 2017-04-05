@@ -1,0 +1,125 @@
+@charset "utf-8";
+* {
+	margin:0;
+	padding:0;
+}
+#storbox {
+	width:100%;
+	margin:0 auto;
+}
+body {
+	-webkit-animation: bugfix infinite 1s;	
+}
+header {
+	width:100%;
+	background-color:#333333;
+}
+#logga {
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+	width:30%;	
+}
+nav {
+	width:100%;
+	font-family:morris;
+	font-size:3em;
+}
+article {
+	width:100%;
+	background-color:#999999;
+}
+nav[role="custom-dropdown"] ul > li {
+	float: left;
+	width: 25%;
+	text-align: center;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+	transition-property: box-shadow, color;
+	box-shadow: 0 0.05em 0.25em 0 rgba(0, 0, 0, 0.35);
+	cursor: pointer;
+	background-color:#666666;
+	padding-top:5px;
+	padding-bottom:5px;
+	list-style:none;
+}
+nav a:link {
+	text-decoration:none;
+	color:#b6b096;
+}
+nav a:visited {
+	color:#b6b096;
+}
+nav a:active {
+	color:#b6b096;
+}
+nav[role="custom-dropdown"] ul > li:hover {
+  box-shadow: 0 0.05em 0.25em 0 rgba(0, 0, 0, 0.35), inset 0 0 0 2em rgba(0, 0, 0, 0.3);
+  color:#b6b096;
+}
+@font-face {
+    font-family: 'morris';
+    src: url('morrisroman-black-webfont.woff2') format('woff2'),
+         url('morrisroman-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+label {
+  display: none;
+  cursor: pointer;
+  user-select: none;
+}
+/* small screens */
+@media screen and (max-width: 44em) {
+  header {
+	  float:left;
+  }
+  #logga {
+  	width:80%;
+  	margin-right:0;
+	margin-left:0;
+  }
+  nav[role="custom-dropdown"] ul {
+    display: none;
+  }
+  nav[role="custom-dropdown"] label {
+    position:absolute;
+    display:inline;
+    padding-left: .30em;
+    font-size: 1.1em;
+    margin: 0;
+  }
+  nav[role="custom-dropdown"] label:after {
+    position:absolute;
+    right: .25em;
+    top: 0;
+    content: "\2261";
+    font-size: 1.8em;
+  }
+  nav[role="custom-dropdown"] input[type=checkbox]:checked ~ label:after {
+    color: #222;
+  }
+  nav[role="custom-dropdown"] input[type=checkbox]:checked ~ ul {
+    display: block;
+  }
+  nav[role="custom-dropdown"] input[type=checkbox]:checked ~ ul > li {
+    width: 100%;
+    opacity: .8;
+    text-align: left;
+	padding-left:.5em;
+  }
+}
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 0;
+  }
+}
