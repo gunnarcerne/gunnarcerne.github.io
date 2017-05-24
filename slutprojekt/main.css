@@ -109,10 +109,12 @@ label {
 	border-radius:5%;
 }
 h1 {
-	font-size:36px;
+	font-size:40px;
+	font-family:morris;
 }
 h2 {
 	font-size:36px;
+	font-family:morris;
 }
 #startSideText {
 	font-size:24px;
